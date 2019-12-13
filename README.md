@@ -1,5 +1,4 @@
-
-## Decision Trees [Suggested Time: 15 min]
+## Decision Trees
 
 ### Concepts 
 You're given a dataset of **30** elements, 15 of which belong to a positive class (denoted by *`+`* ) and 15 of which do not (denoted by `-`). These elements are described by two attributes, A and B, that can each have either one of two values, true or false. 
@@ -8,11 +7,11 @@ The diagrams below show the result of splitting the dataset by attribute: the di
 
 <img src="images/decision_stump.png">
 
-**1.1) Which one of the two attributes resulted in the best split of the original data? How do you select the best attribute to split a tree at each node?** _(Hint: Mention splitting criteria)_
+**1) Which one of the two attributes resulted in the best split of the original data? How do you select the best attribute to split a tree at each node?** _(Hint: Mention splitting criteria)_
 
 
-```
-# Your answer here 
+```python
+# Your written answer here 
 ```
 
 ### Decision Trees for Regression 
@@ -34,7 +33,7 @@ The features and target variables are not normalized.
 In the cells below, we import `pandas` and `numpy` for you, and we load the data into a pandas DataFrame. We also include code to inspect the first five rows and get the shape of the DataFrame.
 
 
-```
+```python
 import pandas as pd 
 import numpy as np 
 
@@ -44,13 +43,13 @@ df = pd.read_excel(filename)
 ```
 
 
-```
+```python
 # Inspect the first five rows of the dataframe
 df.head()
 ```
 
 
-```
+```python
 # Get the shape of the dataframe 
 df.shape
 ```
@@ -60,31 +59,31 @@ Before fitting any models, you need to create training and testing splits for th
 Below, we split the data into features and target ('PE') for you. 
 
 
-```
+```python
 X = df[df.columns.difference(['PE'])]
 y = df['PE']
 ```
 
-**1.2) Split the data into training and test sets. Create training and test sets with `test_size=0.5` and `random_state=1`.** 
+**2) Split the data into training and test sets. Create training and test sets with `test_size=0.5` and `random_state=1`.** 
 
 
-```
+```python
 # Your code here. Replace None with appropriate code. 
 
 X_train, X_test, y_train, y_test = None
 ```
 
-**1.3) Fit a vanilla decision tree regression model with scikit-learn to the training data.** Set `random_state = 1` for reproducibility. **Evaluate the model on the test data.** 
+**3) Fit a vanilla decision tree regression model with scikit-learn to the training data.** Set `random_state = 1` for reproducibility. **Evaluate the model on the test data.** 
 
 
-```
+```python
 # Your code here 
 ```
 
-**1.4) Obtain the mean squared error, mean absolute error, and coefficient of determination (r2 score) of the predictions on the test set.** _Hint: Look at the `sklearn.metrics` module._
+**4) Obtain the mean squared error, mean absolute error, and coefficient of determination (r2 score) of the predictions on the test set.** _Hint: Look at the `sklearn.metrics` module._
 
 
-```
+```python
 # Your code here. Replace None with appropriate code. 
 
 print("Mean Squared Error:", None)
@@ -98,16 +97,16 @@ Hint: MSE = 22.21041691053512
 
 For this next section feel free to refer to the scikit learn documentation on [decision tree regressors](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeRegressor.html)
 
-**1.5) Add hyperparameters to a a new decision tree and fit it to our training data and evaluate the model with the test data.**
+**5) Add hyperparameters to a a new decision tree and fit it to our training data and evaluate the model with the test data.**
 
 
-```
+```python
 # Your code here 
 ```
 
-**1.6) Obtain the mean squared error, mean absolute error, and coefficient of determination (r2 score) of the predictions on the test set. Did this improve your previous model? (It's ok if it didn't)**
+**6) Obtain the mean squared error, mean absolute error, and coefficient of determination (r2 score) of the predictions on the test set. Did this improve your previous model? (It's ok if it didn't)**
 
 
-```
+```python
 # Your answer and explanation here
 ```
