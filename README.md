@@ -1,13 +1,15 @@
 ## Decision Trees
 
 ### Concepts 
-You're given a dataset of **30** elements, 15 of which belong to a positive class (denoted by *`+`* ) and 15 of which do not (denoted by `-`). These elements are described by two attributes, A and B, that can each have either one of two values, true or false. 
+You're given a dataset of **30** elements, 15 of which belong to a positive class (denoted by `+` ) and 15 of which do not (denoted by `-`). These elements are described by two attributes, A and B, that can each have either one of two values, true or false. 
 
-The diagrams below show the result of splitting the dataset by attribute: the diagram on the left hand side shows that if we split by Attribute A there are 13 items of the positive class and 2 of the negative class in one branch and 2 of the positive and 13 of the negative in the other branch. The right hand side shows that if we split the data by Attribute B there are 8 items of the positive class and 7 of the negative class in one branch and 7 of the positive and 8 of the negative in the other branch.
+The diagrams below show the result of splitting the dataset by attribute: the diagram on the left hand side shows that if we split by attribute A there are 13 items of the positive class and 2 of the negative class in one branch and 2 of the positive and 13 of the negative in the other branch. The right hand side shows that if we split the data by attribute B there are 8 items of the positive class and 7 of the negative class in one branch and 7 of the positive and 8 of the negative in the other branch.
 
 <img src="images/decision_stump.png">
 
-**1) Which one of the two attributes resulted in the best split of the original data? How do you select the best attribute to split a tree at each node?** _(Hint: Mention splitting criteria)_
+**1) Which one of the two attributes resulted in the best split of the original data? How do you select the best attribute to split a tree at each node?**
+
+It may be helpful to discuss splitting criteria.
 
 
 ```python
@@ -34,6 +36,8 @@ In the cells below, we import `pandas` and `numpy` for you, and we load the data
 
 
 ```python
+# Run this cell without changes
+
 import pandas as pd 
 import numpy as np 
 
@@ -44,12 +48,14 @@ df = pd.read_excel(filename)
 
 
 ```python
+# Run this cell without changes
 # Inspect the first five rows of the dataframe
 df.head()
 ```
 
 
 ```python
+# Run this cell without changes
 # Get the shape of the dataframe 
 df.shape
 ```
@@ -60,6 +66,7 @@ Below, we split the data into features and target ('PE') for you.
 
 
 ```python
+# Run this cell without changes
 X = df[df.columns.difference(['PE'])]
 y = df['PE']
 ```
@@ -68,36 +75,39 @@ y = df['PE']
 
 
 ```python
-# Your code here. Replace None with appropriate code. 
+# Replace None with appropriate code
 
 X_train, X_test, y_train, y_test = None
 ```
 
 **3) Fit a vanilla decision tree regression model with scikit-learn to the training data.** Set `random_state = 1` for reproducibility. **Evaluate the model on the test data.** 
 
+For the rest of this section feel free to refer to the scikit-learn documentation on [decision tree regressors](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeRegressor.html).
+
 
 ```python
 # Your code here 
 ```
 
-**4) Obtain the mean squared error, mean absolute error, and coefficient of determination (r2 score) of the predictions on the test set.** _Hint: Look at the `sklearn.metrics` module._
+**4) Obtain the mean squared error, mean absolute error, and coefficient of determination (r2 score) of the predictions on the test set.**
+
+You can use the `sklearn.metrics` module.
 
 
 ```python
-# Your code here. Replace None with appropriate code. 
+# Your code imports here
 
+# Replace None with appropriate code
 print("Mean Squared Error:", None)
 print("Mean Absolute Error:", None)
 print("R-squared:", None)
 ```
 
-Hint: MSE = 22.21041691053512
+Hint: MSE should be about 22.21
 
 ### Hyperparameter Tuning of Decision Trees for Regression
 
-For this next section feel free to refer to the scikit learn documentation on [decision tree regressors](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeRegressor.html)
-
-**5) Add hyperparameters to a a new decision tree and fit it to our training data and evaluate the model with the test data.**
+**5) Add hyperparameters to a new decision tree and fit it to our training data. Evaluate the model with the test data.**
 
 
 ```python
@@ -109,4 +119,9 @@ For this next section feel free to refer to the scikit learn documentation on [d
 
 ```python
 # Your answer and explanation here
+```
+
+
+```python
+
 ```
