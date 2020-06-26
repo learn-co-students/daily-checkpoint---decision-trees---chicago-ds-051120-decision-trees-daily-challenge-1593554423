@@ -1,4 +1,4 @@
-## Decision Trees
+# Decision Trees
 
 ### Concepts 
 You're given a dataset of **30** elements, 15 of which belong to a positive class (denoted by `+` ) and 15 of which do not (denoted by `-`). These elements are described by two attributes, A and B, that can each have either one of two values, true or false. 
@@ -7,13 +7,15 @@ The diagrams below show the result of splitting the dataset by attribute: the di
 
 <img src="images/decision_stump.png">
 
-**1) Which one of the two attributes resulted in the best split of the original data? How do you select the best attribute to split a tree at each node?**
+### 1) Which one of the two attributes resulted in the best split of the original data? How do you select the best attribute to split a tree at each node? 
 
 It may be helpful to discuss splitting criteria.
 
 
 ```python
-# Your written answer here 
+"""
+Your written answer here
+"""
 ```
 
 ### Decision Trees for Regression 
@@ -49,14 +51,12 @@ df = pd.read_excel(filename)
 
 ```python
 # Run this cell without changes
-# Inspect the first five rows of the dataframe
 df.head()
 ```
 
 
 ```python
 # Run this cell without changes
-# Get the shape of the dataframe 
 df.shape
 ```
 
@@ -71,7 +71,7 @@ X = df[df.columns.difference(['PE'])]
 y = df['PE']
 ```
 
-**2) Split the data into training and test sets. Create training and test sets with `test_size=0.5` and `random_state=1`.** 
+### 2) Split the data into training and test sets. Create training and test sets with `test_size=0.5` and `random_state=1`.
 
 
 ```python
@@ -80,16 +80,25 @@ y = df['PE']
 X_train, X_test, y_train, y_test = None
 ```
 
-**3) Fit a vanilla decision tree regression model with scikit-learn to the training data.** Set `random_state = 1` for reproducibility. **Evaluate the model on the test data.** 
+### 3) Fit a decision tree regression model with scikit-learn to the training data. Use parameter defaults and `random_state=1` for this model. Then use the fitted regressor to generate predictions for the test data.
 
 For the rest of this section feel free to refer to the scikit-learn documentation on [decision tree regressors](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeRegressor.html).
 
 
 ```python
 # Your code here 
+
+# Bring in necessary imports
+
+# Create the model
+
+# Fit the model to the training data
+
+# Generate predictions for the test data
+
 ```
 
-**4) Obtain the mean squared error, mean absolute error, and coefficient of determination (r2 score) of the predictions on the test set.**
+### 4) Obtain the mean squared error, mean absolute error, and coefficient of determination (r2 score) of the predictions on the test set.
 
 You can use the `sklearn.metrics` module.
 
@@ -107,21 +116,30 @@ Hint: MSE should be about 22.21
 
 ### Hyperparameter Tuning of Decision Trees for Regression
 
-**5) Add hyperparameters to a new decision tree and fit it to our training data. Evaluate the model with the test data.**
+### 5) Create a second decision tree model, this time with additional hyperparameters specified (still with `random_state`=1). Fit it to the training data, and generate predictions for the test data.
 
 
 ```python
 # Your code here 
+
+# Create the model
+
+# Fit the model to the training data
+
+# Generate predictions for the test data
+
 ```
 
-**6) Obtain the mean squared error, mean absolute error, and coefficient of determination (r2 score) of the predictions on the test set. Did this improve your previous model? (It's ok if it didn't)**
+### 6) Obtain the mean squared error, mean absolute error, and coefficient of determination (r2 score) of the predictions on the test set from the new model. Did this improve your previous model? (It's ok if it didn't) Why or why not?
 
 
 ```python
-# Your answer and explanation here
+# Your code here
 ```
 
 
 ```python
-
+"""
+Your written answer here
+"""
 ```
